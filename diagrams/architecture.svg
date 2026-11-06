@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="Arial,sans-serif" font-size="13">
+<rect width="760" height="330" fill="#fff"/>
+<text x="380" y="26" text-anchor="middle" font-size="17" font-weight="bold">CyberCampus lab - architecture (127.0.0.1)</text>
+<rect x="30" y="80" width="150" height="90" rx="10" fill="#e8f1fc" stroke="#1d6fd8"/>
+<text x="105" y="110" text-anchor="middle" font-weight="bold">Browser / script</text><text x="105" y="130" text-anchor="middle">scripts/generate_traffic.py</text><text x="105" y="148" text-anchor="middle">client (random port)</text>
+<rect x="300" y="80" width="170" height="90" rx="10" fill="#e3f6f3" stroke="#12a594"/>
+<text x="385" y="110" text-anchor="middle" font-weight="bold">Flask server</text><text x="385" y="130" text-anchor="middle">127.0.0.1:5000 (HTTP)</text><text x="385" y="148" text-anchor="middle">static pages + /api/*</text>
+<rect x="590" y="80" width="140" height="90" rx="10" fill="#fff6dd" stroke="#c9a400"/>
+<text x="660" y="115" text-anchor="middle" font-weight="bold">SQLite DB</text><text x="660" y="135" text-anchor="middle">cybercampus.db</text>
+<rect x="300" y="235" width="170" height="60" rx="10" fill="#fde8e8" stroke="#b3261e"/>
+<text x="385" y="260" text-anchor="middle" font-weight="bold">Wireshark</text><text x="385" y="278" text-anchor="middle">loopback capture</text>
+<line x1="180" y1="125" x2="300" y2="125" stroke="#333" stroke-width="2"/><polygon points="300,125 290,120 290,130"/>
+<text x="240" y="115" text-anchor="middle">HTTP request</text>
+<line x1="300" y1="150" x2="180" y2="150" stroke="#333" stroke-width="2" stroke-dasharray="5"/><polygon points="180,150 190,145 190,155"/>
+<text x="240" y="168" text-anchor="middle">response</text>
+<line x1="470" y1="125" x2="590" y2="125" stroke="#333" stroke-width="2"/><text x="530" y="115" text-anchor="middle">SQL</text>
+<line x1="385" y1="170" x2="385" y2="235" stroke="#b3261e" stroke-width="2" stroke-dasharray="6"/><text x="395" y="208">sniffs tcp port 5000</text>
+<text x="30" y="315" fill="#555">Flow 1: GET / -> courses (public)   Flow 2: POST /api/login -> GET /api/profile, /api/schedule (token)</text>
+</svg>

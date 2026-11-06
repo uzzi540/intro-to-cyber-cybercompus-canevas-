@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courses - CyberCampus</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><header></header><main>
+<div class="banner">Fictional lab portal - do not enter real credentials.</div>
+<h2>Course catalogue</h2><div class="grid" id="list"><p class="muted">Loading...</p></div>
+</main><footer></footer>
+<script src="/js/app.js"></script>
+<script>renderLayout("courses.html");
+
+(async()=>{const r=await api("/api/courses");const el=document.getElementById("list");
+el.innerHTML=r.ok?r.data.map(c=>`<div class="card"><h3>${c.code} - ${c.title}</h3><p class="muted">${c.description}</p><span class="tag">${c.credits} credits</span> <span class="tag">${c.teacher}</span></div>`).join(""):"<p class=\"err\">Could not load courses.</p>";})();
+</script></body></html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile - CyberCampus</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><header></header><main>
+<div class="banner">Fictional lab portal - do not enter real credentials.</div>
+<h2>My profile</h2><div class="card" id="box"><p class="muted">Loading...</p></div>
+</main><footer></footer>
+<script src="/js/app.js"></script>
+<script>renderLayout("profile.html");
+
+if(requireLogin()){(async()=>{const r=await api("/api/profile");const b=document.getElementById("box");
+if(r.ok){const d=r.data;b.innerHTML=`<h3>${d.full_name}</h3><p class="muted">${d.email}</p><span class="tag">${d.role}</span> <span class="tag">${d.program}</span>`;}
+else{sessionStorage.clear();location.href="/login.html";}})();}
+</script></body></html>
